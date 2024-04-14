@@ -119,6 +119,16 @@ public class MainService
 
     public async Task DeleteClassroomAsync()
     {
+        _consoleService.Write("Enter the ID of the classroom you'd like to delete: ");
+        var idClassroomToDelete = int.Parse(_consoleService.ReadLine());
+        var name = 
+
+        var classroomInstance = new Classroom { ClassroomId = idClassroomToDelete, Name = };
+
+        var deletedClassroom = await _repository.DeleteClassroomAsync(classroomInstance);
+
+        _consoleService.WriteLine($"Deleted the classroom with ID: {deletedClassroom.ClassroomId}.");
+
         // TODO: Implement this method to delete a classroom
         // You will need to ask the user for the ID of the classroom to delete
         // Then call the DeleteClassroomAsync method on the repository
